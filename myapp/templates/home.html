@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+</head>
+
+<body>
+    <div class="container" style="text-align: center">
+        {% include 'navbar.html' %}
+
+        <h2>Welcome to our Home page</h2>
+        <form action="/index/" method="POST">
+            {% csrf_token %}
+            <input type="checkbox" name="check">
+            <button>Send</button>
+
+
+        </form>
+
+
+
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam quos nemo nostrum natus voluptate cumque
+            aut odit, totam aperiam ex, eveniet deserunt cum autem beatae quas, sit illum quam ea.
+        </p>
+        <h4>
+            New Section
+        </h4>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Laudantium dolor eaque iste, ab nemo soluta
+            repellendus deleniti nisi voluptatem omnis!
+        </p>
+
+        <!-- accesing the dynamic data -->
+         <!--applying if condition  -->
+         <!-- this is a django template -->
+
+
+         {% if isActive %}
+        <div style="text-align: left;">
+             <h1>Today's date is {{date}}</h1>
+            
+             <h3>Name :-{{name}} </h3>
+             <hr>
+     
+             <h2>Student Data:-</h2>
+             <h3>Student name:{{student_data.student_name}} </h3>
+             <h3>Student college:-{{student_data.student_college}} </h3>
+             <h3>Student City:-{{student_data.student_city}} </h3>
+             <hr>
+
+             {% for p in list_of_programs%}
+             <h4>
+                {{p}}
+             </h4>
+             
+             {% endfor %}
+             <hr>
+         </div>
+         {% endif %}
+
+
+
+
+
+        <button>
+            Home
+        </button>
+    </div>
+
+</body>
+
+</html>
