@@ -86,7 +86,7 @@ def testimonials(request):
         return render(request, "emp/testimonials.html",{
                 'testi':testi
         })
-
+# feedback views function
 def feedback(request):
         if request.method == 'POST':
               form = FeedbackForm(request.POST)
