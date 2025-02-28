@@ -24,6 +24,7 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.testimonial
     
+    
 
 
 # Django default user model using AbstractUser
